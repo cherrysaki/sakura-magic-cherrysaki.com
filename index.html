@@ -18,11 +18,25 @@
       <div class="side-menu-trigger"></div>
       <div class="side-menu-content">
         <ul>
-          <li><a href="#section-01"><span class="num">01</span> まずは桜を知る</a></li>
-          <li><a href="#section-02"><span class="num">02</span> 桜が託された想い</a></li>
-          <li><a href="#section-03"><span class="num">03</span> 桜の魅力を知る</a></li>
-          <li><a href="#section-04"><span class="num">04</span> ことばに宿る桜</a></li>
-          <li><a href="#section-05"><span class="num">05</span> この春、訪れたい桜</a></li>
+          <li>
+            <a href="#section-01"><span class="num">01</span> まずは桜を知る</a>
+          </li>
+          <li>
+            <a href="#section-02"
+              ><span class="num">02</span> 桜が託された想い</a
+            >
+          </li>
+          <li>
+            <a href="#section-03"><span class="num">03</span> 桜の魅力を知る</a>
+          </li>
+          <li>
+            <a href="#section-04"><span class="num">04</span> ことばに宿る桜</a>
+          </li>
+          <li>
+            <a href="#section-05"
+              ><span class="num">05</span> この春、訪れたい桜</a
+            >
+          </li>
         </ul>
       </div>
     </nav>
@@ -51,11 +65,8 @@
 
     <!-- セクション1 -->
     <section id="section-01" class="section section-01">
-      <img
-        class="section-01-petal"
-        src="images/sakura_dual_petal.webp"
-        alt=""
-      />
+      <img class="section-01-wind" src="images/wind_right.svg" alt="" />
+      <img class="section-01-petal" src="images/sakura_dual_petal.svg" alt="" />
       <div class="container">
         <h2 class="section-title">
           <span class="num">01</span> まずは桜を知る
@@ -75,13 +86,14 @@
       </div>
       <img
         class="section-01-blizzard"
-        src="images/sakura_blizzard.webp"
+        src="images/sakura_blizzard.svg"
         alt=""
       />
     </section>
 
     <!-- セクション2 -->
     <section id="section-02" class="section section-02">
+      <img class="section-02-wind" src="images/wind_left.svg" alt="" />
       <div class="container">
         <h2 class="section-title section-title--right">
           <span class="num">02</span> 桜が託された想い
@@ -101,10 +113,12 @@
             ただ華やかなだけではなく、散る瞬間にさえ美しさを感じさせる花。<br />
             その姿は、表面的な装いではなく、芯の通った内面の美しさを思わせます。
           </p>
+          <!-- <img class="section-02-tree" src="images/sakura_tree.svg" alt="" /> -->
         </div>
       </div>
-      <img class="section-02-tree" src="images/sakura_tree.webp" alt="" />
-      <img class="section-02-nami" src="images/naminami.webp" alt="" />
+      <div class="section-02-bottom">
+        <img class="section-02-nami" src="images/naminami.svg" alt="" />
+      </div>
     </section>
 
     <!-- セクション3 -->
@@ -128,7 +142,7 @@
             </p>
           </div>
           <div class="force-block-img">
-            <img src="images/pink_force.webp" alt="桃色のちから" />
+            <img src="images/pink_force.svg" alt="桃色のちから" />
           </div>
         </div>
 
@@ -172,7 +186,7 @@
 
     <!-- セクション4 -->
     <section id="section-04" class="section section-04">
-      <img class="section-04-nami" src="images/nami.webp" alt="" />
+      <img class="section-04-nami" src="images/nami.svg" alt="" />
       <div class="container">
         <h2 class="section-title section-title--right">
           <span class="num">04</span> ことばに宿る桜
@@ -183,69 +197,89 @@
             その語源には、いくつかの説がある。
           </p>
         </div>
+      </div><!-- .container 閉じ -->
 
-        <!-- 01. 古い信仰に由来 -->
-        <div class="etymology-card">
-          <div class="etymology-icon"><!-- 桜アイコン --></div>
-          <h3 class="etymology-heading">
-            <span class="num">01.</span>古い信仰に由来
-          </h3>
-          <div class="etymology-body">
-            <p>
-              桜の「さ」は田の神様を表し、「くら」は神様が宿る場所、<br />
-              つまり「御座」を意味すると言われています。
-            </p>
-            <p>
-              農耕民族であった日本人にとって、<br />
-              桜は豊作を占う大切な目印でもありました。
-            </p>
-            <p>花が咲くことは、神様が山から里へ降りてくる合図だったのです。</p>
-          </div>
-        </div>
+      <!-- 横スクロール用ラッパー -->
+      <div class="section-04-runway">
+        <div class="section-04-sticky">
+          <div class="etymology-track">
 
-        <!-- 02. 古事記に由来 -->
-        <div class="etymology-card">
-          <div class="etymology-icon"><!-- 桜アイコン --></div>
-          <h3 class="etymology-heading">
-            <span class="num">02.</span>古事記に由来
-          </h3>
-          <div class="etymology-body">
-            <p>
-              『古事記』に登場する桜の女神「コノハナサクヤヒメ」<br />
-              に由来すると言われています。
-            </p>
-            <p>
-              この中の「サクヤ」から、<br />
-              「サクラ」になったと考えられている。
-            </p>
-            <p>桜は神話の中の女神とも結びつく存在なのです。</p>
-          </div>
-        </div>
+            <!-- 01. 古い信仰に由来 -->
+            <div class="etymology-card">
+              <div class="etymology-icon">
+                <img
+                  src="images/sakura_01.svg"
+                  alt="桜アイコン"
+                  class="sakura-icon"
+                />
+              </div>
+              <h3 class="etymology-heading">
+                <span class="num">01.</span>古い信仰に由来
+              </h3>
+              <div class="etymology-body">
+                <p>
+                  桜の「さ」は田の神様を表し、「くら」は神様が宿る場所、<br />
+                  つまり「御座」を意味すると言われています。
+                </p>
+                <p>
+                  農耕民族であった日本人にとって、<br />
+                  桜は豊作を占う大切な目印でもありました。
+                </p>
+                <p>花が咲くことは、神様が山から里へ降りてくる合図だったのです。</p>
+              </div>
+            </div>
 
-        <!-- 03. 「咲く」の複数説 -->
-        <div class="etymology-card">
-          <div class="etymology-icon"><!-- 桜アイコン --></div>
-          <h3 class="etymology-heading">
-            <span class="num">03.</span>「咲く」の複数説
-          </h3>
-          <div class="etymology-body">
-            <p>
-              「咲く」に複数を意味する「ら」を合わせたと言われて<br />
-              います。
-            </p>
-            <p>
-              枝いっぱいに小さな花を咲かせるその姿を、<br />
-              そのまま言葉にしたといわれている。
-            </p>
-            <p>
-              満開の桜が一斉に咲き誇る様子を思えば、<br />
-              どこか納得できる響きでもある。
-            </p>
-          </div>
-        </div>
-      </div>
+            <!-- 02. 古事記に由来 -->
+            <div class="etymology-card">
+              <div class="etymology-icon">
+                <img
+                  src="images/sakura_02.png"
+                  alt="桜アイコン"
+                  class="sakura-icon"
+                />
+              </div>
+              <h3 class="etymology-heading">
+                <span class="num">02.</span>古事記に由来
+              </h3>
+              <div class="etymology-body">
+                <p>
+                  『古事記』に登場する桜の女神「コノハナサクヤヒメ」<br />
+                  に由来すると言われています。
+                </p>
+                <p>
+                  この中の「サクヤ」から、<br />
+                  「サクラ」になったと考えられている。
+                </p>
+                <p>桜は神話の中の女神とも結びつく存在なのです。</p>
+              </div>
+            </div>
+
+            <!-- 03. 「咲く」の複数説 -->
+            <div class="etymology-card">
+              <div class="etymology-icon"><!-- 桜アイコン --></div>
+              <h3 class="etymology-heading">
+                <span class="num">03.</span>「咲く」の複数説
+              </h3>
+              <div class="etymology-body">
+                <p>
+                  「咲く」に複数を意味する「ら」を合わせたと言われて<br />
+                  います。
+                </p>
+                <p>
+                  枝いっぱいに小さな花を咲かせるその姿を、<br />
+                  そのまま言葉にしたといわれている。
+                </p>
+                <p>
+                  満開の桜が一斉に咲き誇る様子を思えば、<br />
+                  どこか納得できる響きでもある。
+                </p>
+              </div>
+            </div>
+
+          </div><!-- .etymology-track -->
+        </div><!-- .section-04-sticky -->
+      </div><!-- .section-04-runway -->
     </section>
-
     <!-- セクション5 -->
     <section id="section-05" class="section section-05">
       <div class="container">
@@ -254,41 +288,49 @@
         </h2>
 
         <div class="bento-grid">
-          <!-- Row 1 -->
+          <!-- 上段 -->
           <div class="bento-item bento-aomori">
             <img src="images/aomori_spot.webp" alt="弘前公園" />
             <p class="bento-caption">弘前公園<br /><span>（青森）</span></p>
           </div>
+
           <div class="bento-item bento-saitama">
             <img src="images/saitama_spot.webp" alt="幸手権現堂桜堤" />
             <p class="bento-caption">
               幸手権現堂桜堤<br /><span>（埼玉）</span>
             </p>
           </div>
+
           <div class="bento-item bento-vertical-text">
             <p class="vertical-text">
-              桜は、今の時期もどこかで誰かの春をそっと彩っている
+              桜は、今この瞬間も<br />
+              どこかで静かに咲き
             </p>
           </div>
 
-          <!-- Row 2-3 -->
+          <!-- 左縦長 -->
           <div class="bento-item bento-tokyo">
             <img src="images/tokyo_spot.webp" alt="目黒川" />
             <p class="bento-caption">目黒川<br /><span>（東京）</span></p>
           </div>
+
+          <!-- 中央文 -->
           <div class="bento-item bento-center-text">
             <p>さあ、あなたは今年、どこで桜に会いますか。</p>
           </div>
+
+          <!-- 右中 -->
           <div class="bento-item bento-fukuoka">
             <img src="images/fukuoka_spot.webp" alt="舞鶴公園" />
             <p class="bento-caption">舞鶴公園<br /><span>（福岡県）</span></p>
           </div>
 
-          <!-- Row 4 -->
+          <!-- 下段 -->
           <div class="bento-item bento-kyoto">
             <img src="images/kyoto_spot.webp" alt="清水寺" />
             <p class="bento-caption">清水寺<br /><span>（京都）</span></p>
           </div>
+
           <div class="bento-item bento-closing-text">
             <p>誰かの春を</p>
             <p>そっと彩っている</p>
