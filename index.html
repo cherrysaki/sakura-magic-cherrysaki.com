@@ -13,6 +13,19 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- 桜の花びらアニメーション -->
+    <ul class="sakura-fall">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
     <!-- サイドメニュー -->
     <nav class="side-menu">
       <div class="side-menu-trigger"></div>
@@ -366,6 +379,7 @@
         document.getElementById("text2"),
         document.getElementById("text3"),
       ];
+      const sakuraFall = document.querySelector(".sakura-fall");
 
       window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;
@@ -387,6 +401,13 @@
             t.classList.remove("active");
           }
         });
+
+        // 桜の花びら: firstview（0〜5vh）では非表示、セクション以降で表示
+        if (section >= 5) {
+          sakuraFall.classList.add("visible");
+        } else {
+          sakuraFall.classList.remove("visible");
+        }
       });
     </script>
   </body>
