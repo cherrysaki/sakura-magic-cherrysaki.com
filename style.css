@@ -287,6 +287,7 @@ body {
   font-size: 24px;
   line-height: 250%;
   letter-spacing: 9%;
+  font-weight: normal;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #e8d4d4;
@@ -410,8 +411,56 @@ body {
 }
 
 .etymology-card:nth-child(3) .etymology-icon {
+  animation-name: none;
+}
+
+/* 花びら弾け飛びアニメーション (Card 03) */
+.petal-burst {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.petal {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #ffdfdf;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation-name: petal-burst;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
   animation-timeline: --runway;
   animation-range: contain 80% contain 100%;
+}
+
+.petal:nth-child(1) { --angle: 0deg;    }  /* 上 */
+.petal:nth-child(2) { --angle: 72deg;   }  /* 右上 */
+.petal:nth-child(3) { --angle: 144deg;  }  /* 右下 */
+.petal:nth-child(4) { --angle: 216deg;  }  /* 左下 */
+.petal:nth-child(5) { --angle: 288deg;  }  /* 左上 */
+
+@keyframes petal-burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--angle))
+      translateY(-50px)
+      scale(1);
+    opacity: 1;
+  }
 }
 
 .sakura-icon {
@@ -593,5 +642,26 @@ body {
   color: #5b5b5b;
   text-align: center;
   padding: 2rem 1rem;
-  font-size: 0.875rem;
+  font-size: 16px;
+  line-height: 250%;
+  letter-spacing: 9%;
+  height: 320px;
+}
+
+.footer .footer-copyright {
+  padding: 40px;
+}
+
+.footer .footer-section {
+  padding: 40px;
+}
+
+.footer .footer-section a {
+  color: #5b5b5b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer .footer-section a:hover {
+  color: #f0b5b5;
 }
