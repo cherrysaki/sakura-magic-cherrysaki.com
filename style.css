@@ -677,7 +677,7 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 1.5rem;
-  border: 1px solid #e8d4d4;
+  border: 1px solid #ffdfdf;
   border-radius: 8px;
   width: 360px;
   height: 360px;
@@ -690,6 +690,14 @@ body {
   font-size: 24px;
   line-height: 250%;
   letter-spacing: 9%;
+}
+
+.bento-closing-text .closing-text-first {
+  margin-right: 6rem;
+}
+
+.bento-closing-text .closing-text-second {
+  margin-left: 3rem;
 }
 
 /* フッター */
