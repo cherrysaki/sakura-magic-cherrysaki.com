@@ -268,7 +268,7 @@ body {
   line-height: 250%;
   letter-spacing: 9%;
   padding: 0 1rem;
-  right: 12rem;
+  left: 60%;
 }
 
 .scroll-text.active {
