@@ -1127,6 +1127,10 @@ body.menu-open {
     margin-left: 0;
   }
 
+  .force-block-text {
+    max-width: 400px;
+  }
+
   .force-block-img {
     width: 100%;
     max-width: 280px;

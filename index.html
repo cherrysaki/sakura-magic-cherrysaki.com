@@ -448,18 +448,21 @@
       });
 
       // SP時: セクション04アニメーション発火
-      if (window.matchMedia('(max-width: 767px)').matches) {
-        const etymologyObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-            } else {
-              entry.target.classList.remove('is-visible');
-            }
-          });
-        }, { threshold: 0.3 });
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        const etymologyObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              } else {
+                entry.target.classList.remove("is-visible");
+              }
+            });
+          },
+          { threshold: 0.3 },
+        );
 
-        document.querySelectorAll('.etymology-card').forEach(card => {
+        document.querySelectorAll(".etymology-card").forEach((card) => {
           etymologyObserver.observe(card);
         });
       }
