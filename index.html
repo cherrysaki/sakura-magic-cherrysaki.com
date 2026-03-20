@@ -26,6 +26,14 @@
       <li></li>
     </ul>
 
+    <!-- ハンバーガーメニュー -->
+    <button class="hamburger" aria-label="メニュー">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="hamburger-overlay"></div>
+
     <!-- サイドメニュー -->
     <nav class="side-menu">
       <div class="side-menu-trigger"></div>
@@ -409,6 +417,52 @@
           sakuraFall.classList.remove("visible");
         }
       });
+
+      // ハンバーガーメニュー
+      const hamburger = document.querySelector(".hamburger");
+      const sideMenu = document.querySelector(".side-menu");
+      const overlay = document.querySelector(".hamburger-overlay");
+
+      function openMenu() {
+        sideMenu.classList.add("is-open");
+        overlay.classList.add("is-open");
+        hamburger.classList.add("is-open");
+        document.body.classList.add("menu-open");
+      }
+
+      function closeMenu() {
+        sideMenu.classList.remove("is-open");
+        overlay.classList.remove("is-open");
+        hamburger.classList.remove("is-open");
+        document.body.classList.remove("menu-open");
+      }
+
+      hamburger.addEventListener("click", () => {
+        sideMenu.classList.contains("is-open") ? closeMenu() : openMenu();
+      });
+
+      overlay.addEventListener("click", closeMenu);
+
+      document.querySelectorAll(".side-menu-content a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      // SP時: セクション04アニメーション発火
+      if (window.matchMedia('(max-width: 767px)').matches) {
+        const etymologyObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+            } else {
+              entry.target.classList.remove('is-visible');
+            }
+          });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.etymology-card').forEach(card => {
+          etymologyObserver.observe(card);
+        });
+      }
     </script>
   </body>
 </html>

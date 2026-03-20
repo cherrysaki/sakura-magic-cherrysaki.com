@@ -385,7 +385,7 @@ body {
 
 .section-02-tree {
   position: absolute;
-  bottom: 56px;
+  bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
   height: 720px;
@@ -400,6 +400,7 @@ body {
 
 .section-02-nami {
   display: block;
+  position: relative;
   width: 100%;
   margin-top: -1px;
   pointer-events: none;
@@ -871,4 +872,453 @@ body {
 
 .footer .footer-section a:hover {
   color: #f0b5b5;
+}
+
+/* ============================================
+   ハンバーガーメニュー（デフォルト非表示）
+   ============================================ */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 200;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  backdrop-filter: blur(4px);
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #5b5b5b;
+  border-radius: 2px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.hamburger-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 90;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.hamburger-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ============================================
+   Tablet: max-width 1024px
+   ============================================ */
+@media (max-width: 1024px) {
+  /* グローバル */
+  .container {
+    max-width: 100%;
+    padding: 80px 1.5rem;
+  }
+
+  /* Firstview テキスト */
+  .scroll-text {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90%;
+  }
+
+  /* セクション01 */
+  .section-01-petal {
+    width: 200px;
+    right: 20%;
+  }
+
+  .section-01-blizzard {
+    width: 300px;
+  }
+
+  /* セクション03 */
+  .force-block-img {
+    width: 240px;
+  }
+
+  .force-block {
+    gap: 2rem;
+  }
+
+  /* セクション04 */
+  .etymology-icon {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* セクション05 */
+  .bento-aomori img,
+  .bento-saitama img,
+  .bento-fukuoka img,
+  .bento-kyoto img {
+    height: 260px;
+  }
+
+  .bento-tokyo img {
+    height: 600px;
+    width: 100%;
+  }
+
+  .bento-caption {
+    font-size: 14px;
+  }
+
+  .bento-center-text p {
+    font-size: 20px;
+  }
+
+  .bento-closing-text {
+    width: 100%;
+    height: auto;
+    min-height: 260px;
+  }
+
+  .bento-closing-text p {
+    font-size: 20px;
+  }
+}
+
+/* ============================================
+   SP: max-width 767px
+   ============================================ */
+@media (max-width: 767px) {
+  /* ハンバーガー表示（透明背景） */
+  .hamburger {
+    display: flex;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .hamburger-overlay {
+    display: block;
+  }
+
+  /* サイドメニュー: ホバートリガー無効化 → スライドイン */
+  .side-menu-trigger {
+    display: none;
+  }
+
+  .side-menu-content {
+    transform: translateX(100%);
+  }
+
+  .side-menu:hover .side-menu-content {
+    transform: translateX(100%);
+  }
+
+  .side-menu.is-open .side-menu-content {
+    transform: translateX(0);
+  }
+
+  /* グローバル */
+  .container {
+    padding: 80px 1rem;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-title .num {
+    font-size: 40px;
+  }
+
+  /* Firstview テキスト */
+  .scroll-text {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    width: 90%;
+    font-size: 13px;
+    line-height: 220%;
+  }
+
+  /* 本文フォントサイズ縮小 */
+  .section-01-body p,
+  .section-02-body p,
+  .force-block-text p,
+  .etymology-body p,
+  .section-04-intro p {
+    font-size: 14px;
+  }
+
+  /* セクション01 */
+  .section-01-wind {
+    display: none;
+  }
+
+  .section-01-petal {
+    /* position: static; */
+    display: block;
+    width: 120px;
+    right: 10%;
+    z-index: -1;
+  }
+
+  .section-01-blizzard {
+    width: 200px;
+  }
+
+  /* セクション02 */
+  .section-02-wind {
+    display: none;
+  }
+
+  .section-02-tree {
+    height: 300px;
+    bottom: 2%;
+    z-index: 1;
+  }
+
+  .section-title--right {
+    text-align: left;
+  }
+
+  .section-02-body {
+    text-align: left;
+  }
+
+  /* セクション03 Force Blocks */
+  .force-block {
+    flex-direction: column !important;
+    gap: 1.5rem;
+  }
+
+  .force-block--right {
+    margin-left: 0;
+  }
+
+  .force-block-img {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    order: -1;
+  }
+
+  .force-block-heading::after {
+    transform: none;
+    left: 0;
+    width: 50vw;
+  }
+
+  .force-block--left .force-block-heading::after,
+  .force-block--right .force-block-heading::after {
+    transform: none;
+    left: 0;
+  }
+
+  /* セクション04 横スクロール → 縦積み */
+  .section-04-runway {
+    height: auto;
+    view-timeline-name: none;
+  }
+
+  .section-04-sticky {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+
+  .etymology-track {
+    flex-direction: column;
+    width: 100%;
+    animation: none;
+  }
+
+  .etymology-card {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+
+  .etymology-body p {
+    text-align: center;
+  }
+
+  .section-04-intro {
+    text-align: left;
+  }
+
+  .etymology-icon {
+    width: 120px;
+    height: 120px;
+    animation: none !important;
+  }
+
+  .petal-burst {
+    width: 120px;
+    height: 120px;
+  }
+
+  .petal {
+    animation: none !important;
+    width: 40px;
+    height: 40px;
+  }
+
+  @keyframes petal-burst {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+    }
+    40% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-40px)
+        scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* 画面内に入ったらtime-basedで再生 */
+  .etymology-card.is-visible .etymology-icon {
+    animation: sakura-grow 0.8s ease-out both !important;
+  }
+
+  .etymology-card.is-visible .petal {
+    animation: petal-burst 1s ease-out 0.3s both !important;
+  }
+
+  /* セクション05 Bentoグリッド */
+  .bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.4rem;
+  }
+
+  .bento-aomori {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  .bento-saitama {
+    grid-column: 3 / 5;
+    grid-row: 1;
+  }
+
+  .bento-vertical-text {
+    display: none;
+  }
+
+  .vertical-text {
+    font-size: 10px;
+  }
+
+  .bento-aomori img,
+  .bento-saitama img,
+  .bento-fukuoka img,
+  .bento-kyoto img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .bento-tokyo {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+
+  .bento-tokyo img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .bento-center-text {
+    grid-column: 2 / 4;
+    grid-row: 2;
+  }
+
+  .bento-center-text p {
+    white-space: normal;
+    font-size: 14px;
+  }
+
+  .bento-fukuoka {
+    grid-column: 4 / 5;
+    grid-row: 2;
+  }
+
+  .bento-kyoto {
+    grid-column: 2 / 5;
+    grid-row: 3;
+  }
+
+  .bento-kyoto img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .bento-closing-text {
+    display: none;
+  }
+
+  .bento-caption {
+    font-size: 10px;
+    line-height: 80%;
+  }
+
+  /* フッター */
+  .footer {
+    height: auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .footer .footer-section p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .footer .footer-copyright {
+    padding: 20px;
+  }
+
+  .footer .footer-section {
+    padding: 20px;
+  }
+
+  /* 桜花びらアニメーション: 数削減 + 揺れ幅縮小 */
+  .sakura-fall li:nth-child(n + 7) {
+    display: none;
+  }
 }
